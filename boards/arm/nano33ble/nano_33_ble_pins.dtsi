@@ -1,0 +1,52 @@
+/*
+ * Copyright (c) 2020 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+    nano_33_ble: connector {
+        compatible = "nano-33-ble";
+        #gpio-cells = <2>;
+        gpio-map-mask = <0xffffffff 0xffffffc0>;
+        gpio-map-pass-thru = <0 0x3f>;
+        gpio-map
+            = <13 0 &gpio0 13 0>      /* D13 */
+            , <12 0 &gpio1 8 0>      /* D12 */ //(D12 is 1.08)
+            , <11 0 &gpio1 1 0>     /* D11 */
+            , <10 0 &gpio1 2 0>     /* D10 */
+            , <9 0 &gpio0 27 0>     /* D9 */
+            // , <8 0 &gpio0 10 0>     /* D8/NFC2 */
+            , <8 0 &gpio0 21 0>     /* D8 */
+            // , <7 0 &gpio0 9 0>     /* D7/NFC1 */
+            , <7 0 &gpio0 23 0>      /* D7 */
+            , <6 0 &gpio1 14 0>     /* D6 */
+            , <5 0 &gpio1 13 0>      /* D5 */
+            , <4 0 &gpio1 15 0>      /* D4 */
+            , <3 0 &gpio1 12 0>     /* D3 */
+            , <2 0 &gpio1 11 0>    /* D2 */
+            ;
+    };
+
+    nano_33_ble_a: analog_connector {
+        compatible = "nano-33-ble";
+        #io-channel-cells = <1>;
+        // gpio-map-mask = <0xffffffff 0xffffffc0>;
+        // gpio-map-pass-thru = <0 0x3f>;
+        io-channel-map = 
+                <0 &adc 2>,	    /* A0 = P0.04 = AIN1 */
+				<1 &adc 3>,	    /* A1 = P0.05 = AIN2 */
+				<2 &adc 6>,	    /* A2 = P0.30 = AIN4 */
+				<3 &adc 5>,	    /* A3 = P0.29 = AIN5 */
+				<4 &adc 7>,	    /* A4 = P0.31 = AIN6 */
+				<5 &adc 0>, 	/* A5 = P0.02 = AIN7 */
+				<6 &adc 4>, 	/* A6 = P0.28 = AIN4 */
+				<7 &adc 1>   	/* A7 = P0.03 = AIN1 */
+            ;
+    };
+};
+
+nano_33_ble_d: &nano_33_ble {};
+nano_33_ble_i2c: &i2c0 {};
+nano_33_ble_spi: &spi1 {};
+nano_33_ble_serial: &uart0 {};

@@ -1,0 +1,10 @@
+file_format: "1"
+id: nano_33_ble
+name: nano 33 ble
+type: board
+arch: arm
+outputs:
+  - usb
+  - ble
+url: 
+exposes: [nano_33_ble]

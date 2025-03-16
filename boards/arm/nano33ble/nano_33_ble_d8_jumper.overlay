@@ -1,0 +1,7 @@
+/ {
+    nano_33_ble: connector {
+        gpio-map
+            = <8 0 &gpio0 10 0>     /* D8/NFC2 */
+            ;
+    };
+};

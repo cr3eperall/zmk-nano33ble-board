@@ -1,0 +1,7 @@
+/ {
+    nano_33_ble: connector {
+        gpio-map
+            = <7 0 &gpio0 9 0>     /* D7/NFC1 */
+            ;
+    };
+};
