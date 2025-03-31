@@ -6,7 +6,6 @@
 
 /dts-v1/;
 #include "nano_33_ble.dtsi"
-
 / {
     chosen {
         zmk,battery = &vbatt;
