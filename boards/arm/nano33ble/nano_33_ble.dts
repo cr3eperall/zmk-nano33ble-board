@@ -6,21 +6,21 @@
 
 /dts-v1/;
 #include "nano_33_ble.dtsi"
-/ {
-    chosen {
-        zmk,battery = &vbatt;
-    };
+// / {
+//     chosen {
+//         zmk,battery = &vbatt;
+//     };
 
-    // Node name must match original "EXT_POWER" label to preserve user settings.
-    // EXT_POWER {
-    //     compatible = "zmk,ext-power-generic";
-    //     control-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
-    // };
+//     // Node name must match original "EXT_POWER" label to preserve user settings.
+//     // EXT_POWER {
+//     //     compatible = "zmk,ext-power-generic";
+//     //     control-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+//     // };
 
-    vbatt: vbatt {
-        compatible = "zmk,battery-nrf-vddh";
-        // io-channels = <&adc 2>;
-        // output-ohms = <2000000>;
-        // full-ohms = <(2000000 + 806000)>;
-    };
-};
+//     vbatt: vbatt {
+//         compatible = "zmk,battery-nrf-vddh";
+//         io-channels = <&adc 7>;
+//         // output-ohms = <2000000>;
+//         // full-ohms = <(2000000 + 806000)>;
+//     };
+// };
