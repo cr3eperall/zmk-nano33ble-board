@@ -3,7 +3,7 @@ This module adds a ZMK board definition for the Nano 33 Ble
 
 # Untested Features
 - Leds
-  - I suspect that one led is a ws2812b so an additional driver will be needed
+  - one led is a ws2812b so an additional driver will be needed, but i don't know which pin is connected to it
 - Studio support
 - There is no voltage divider for the battery so zmk,battery-nrf-vddh will need to be used, but i haven't tested it yet
 
